@@ -1,32 +1,27 @@
-import React from "react";
 import { ImageBackground, StyleSheet, View, Image, Text } from "react-native";
 
-function WelcomeScreen(props) {
+import colors from "../config/colors";
+
+const WelcomeScreen = () => {
+  const backgroundURL = "../assets/background.jpg";
+
   return (
-    <ImageBackground
-      style={styles.background}
-      source={require("../assets/background.jpg")}
-    >
+    <ImageBackground style={styles.background} source={require(backgroundURL)}>
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require("../assets/logo-red.png")} />
         <Text>Sell What You Don't Need</Text>
       </View>
-      <View style={styles.loginButton}></View>
-      <View style={styles.registerButton}></View>
+      <View style={[styles.button, styles.loginButton]}></View>
+      <View style={[styles.button, styles.registerButton]}></View>
     </ImageBackground>
   );
-}
+};
 
 const styles = StyleSheet.create({
   background: {
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
-  },
-  loginButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: "#fc5c65",
   },
   logo: {
     width: 100,
@@ -37,10 +32,12 @@ const styles = StyleSheet.create({
     top: 70,
     alignItems: "center",
   },
+  button: { width: "100%", height: 70 },
+  loginButton: {
+    backgroundColor: colors.primary,
+  },
   registerButton: {
-    width: "100%",
-    height: 70,
-    backgroundColor: "#4ecdc4",
+    backgroundColor: colors.secondary,
   },
 });
 
