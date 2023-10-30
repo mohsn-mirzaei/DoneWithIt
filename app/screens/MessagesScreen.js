@@ -35,8 +35,8 @@ const MessagesScreen = () => {
         keyExtractor={(message) => message.id.toString()}
         renderItem={({ item }) => (
           <ListItem
-            fullname={item.fullname}
-            description={item.description}
+            title={item.fullname}
+            subTitle={item.description}
             image={item.image}
             onPress={() => console.log(item.fullname)}
             renderRightActions={() => (
