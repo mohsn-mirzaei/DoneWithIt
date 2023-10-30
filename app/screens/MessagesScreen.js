@@ -29,6 +29,7 @@ const MessagesScreen = () => {
             fullname={item.fullname}
             description={item.description}
             image={item.image}
+            onPress={() => console.log(item.fullname)}
           />
         )}
         ItemSeparatorComponent={() => <ListItemSeparator />}
