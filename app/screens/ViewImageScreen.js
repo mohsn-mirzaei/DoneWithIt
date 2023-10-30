@@ -3,17 +3,13 @@ import { Image, StyleSheet, View } from "react-native";
 import colors from "../config/colors";
 
 function ViewImageScreen() {
-  const imageURL = "../assets/chair.jpg";
+  const imageURL = require("../assets/chair.jpg");
 
   return (
     <View style={styles.container}>
       <View style={[styles.icon, styles.closeIcon]}></View>
       <View style={[styles.icon, styles.deleteIcon]}></View>
-      <Image
-        resizeMode="contain"
-        style={styles.image}
-        source={require(imageURL)}
-      />
+      <Image resizeMode="contain" style={styles.image} source={imageURL} />
     </View>
   );
 }

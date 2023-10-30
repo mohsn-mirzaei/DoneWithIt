@@ -4,13 +4,13 @@ import colors from "../config/colors";
 import AppButton from "../components/AppButton";
 
 const WelcomeScreen = () => {
-  const backgroundURL = "../assets/background.jpg";
+  const backgroundURL = require("../assets/background.jpg");
 
   return (
     <ImageBackground
       blurRadius={10}
       style={styles.background}
-      source={require(backgroundURL)}
+      source={backgroundURL}
     >
       <View style={styles.logoContainer}>
         <Image style={styles.logo} source={require("../assets/logo-red.png")} />
