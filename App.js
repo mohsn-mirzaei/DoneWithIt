@@ -7,5 +7,5 @@ import Card from "./app/components/Card";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
 
 export default App = () => {
-  return <ListingDetailsScreen />;
+  return <ViewImageScreen />;
 };
