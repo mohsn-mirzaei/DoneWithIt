@@ -14,13 +14,20 @@ import { useState } from "react";
 import Screen from "./Screen";
 import PickerItem from "./PickerItem";
 
-const AppPicker = ({ items, onSelectItem, icon, placeholder, selectItem }) => {
+const AppPicker = ({
+  items,
+  onSelectItem,
+  icon,
+  placeholder,
+  selectItem,
+  width,
+}) => {
   const [modalVisible, setMobdalVisible] = useState(false);
 
   return (
     <>
       <TouchableWithoutFeedback onPress={() => setMobdalVisible(true)}>
-        <View style={styles.constainer}>
+        <View style={[styles.constainer, { width }]}>
           {icon && (
             <MaterialCommunityIcons
               style={styles.icon}

@@ -41,11 +41,13 @@ const ListingEditScreen = () => {
           maxLength={8}
           name="price"
           placeholder="Price"
+          width={120}
         />
         <AppFormPicker
           items={categories}
           name="category"
           placeholder="Category"
+          width="50%"
         />
         <AppFormFiled
           maxLength={255}
