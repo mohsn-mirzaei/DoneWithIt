@@ -1,10 +1,11 @@
 import { Image, StyleSheet } from "react-native";
-import Screen from "../components/Screen";
-import AppTextInput from "../components/AppTextInput";
-import AppButton from "../components/AppButton";
 import { Formik } from "formik";
 import * as Yup from "yup";
-import AppText from "../components/AppText";
+
+import AppButton from "../components/AppButton";
+import AppTextInput from "../components/AppTextInput";
+import ErrorMessage from "../components/ErrorMessage";
+import Screen from "../components/Screen";
 
 const logoURL = require("../assets/logo-red.png");
 
@@ -33,7 +34,7 @@ const LoginScreen = () => {
               onChangeText={handleChange("email")}
               textContentType="emailAddress"
             />
-            {errors.email && <AppText>{errors.email}</AppText>}
+            <ErrorMessage error={errors.email} />
             <AppTextInput
               autoCapitalize="none"
               autoCorrect={false}
@@ -43,7 +44,7 @@ const LoginScreen = () => {
               secureTextEntry
               textContentType="password"
             />
-            {errors.password && <AppText>{errors.password}</AppText>}
+            <ErrorMessage error={errors.password} />
             <AppButton title="Login" onPress={handleSubmit} />
           </>
         )}
