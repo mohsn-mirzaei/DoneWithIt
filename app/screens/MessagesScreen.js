@@ -18,6 +18,14 @@ const initialMessages = [
     description: "My name is saeid, I'm Backend developer",
     image: require("../assets/mosh.jpg"),
   },
+  {
+    id: 3,
+    fullname:
+      "My name is saeid, I'm Backend developer My name is saeid, I'm Backend developer My name is saeid, I'm Backend developer My name is saeid, I'm Backend developer",
+    description:
+      "My name is saeid, I'm Backend developer My name is saeid, I'm Backend developer My name is saeid, I'm Backend developer My name is saeid, I'm Backend developer My name is saeid, I'm Backend developer My name is saeid, I'm Backend developer",
+    image: require("../assets/mosh.jpg"),
+  },
 ];
 
 const MessagesScreen = () => {
