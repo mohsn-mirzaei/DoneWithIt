@@ -6,6 +6,7 @@ import AppButton from "../components/AppButton";
 import AppTextInput from "../components/AppTextInput";
 import ErrorMessage from "../components/ErrorMessage";
 import Screen from "../components/Screen";
+import AppFormFiled from "../components/AppFormFiled";
 
 const logoURL = require("../assets/logo-red.png");
 
@@ -23,30 +24,26 @@ const LoginScreen = () => {
         onSubmit={(value) => console.log(value)}
         validationSchema={LoginSchema}
       >
-        {({ handleSubmit, handleChange, errors, setFieldTouched, touched }) => (
+        {({ handleSubmit }) => (
           <>
-            <AppTextInput
+            <AppFormFiled
               autoCapitalize="none"
               autoCorrect={false}
               icon="email"
+              name="email"
               placeholder="Email"
-              keyboardType="email=address"
-              onBlur={() => setFieldTouched("email")}
-              onChangeText={handleChange("email")}
+              keyboardType="email-address"
               textContentType="emailAddress"
             />
-            <ErrorMessage error={errors.email} visible={touched.email} />
-            <AppTextInput
+            <AppFormFiled
               autoCapitalize="none"
               autoCorrect={false}
               icon="lock"
-              onBlur={() => setFieldTouched("password")}
-              onChangeText={handleChange("password")}
+              name="password"
               placeholder="Password"
               secureTextEntry
               textContentType="password"
             />
-            <ErrorMessage error={errors.password} visible={touched.password} />
             <AppButton title="Login" onPress={handleSubmit} />
           </>
         )}
