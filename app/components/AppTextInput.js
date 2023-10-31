@@ -14,7 +14,11 @@ const AppTextInput = ({ icon, ...otherProps }) => {
           size={20}
         />
       )}
-      <TextInput style={defaultStyles.text} {...otherProps} />
+      <TextInput
+        placeholderTextColor={defaultStyles.colors.medium}
+        style={defaultStyles.text}
+        {...otherProps}
+      />
     </View>
   );
 };
