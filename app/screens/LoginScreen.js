@@ -1,9 +1,7 @@
 import { Image, StyleSheet } from "react-native";
 import * as Yup from "yup";
 
-import AppForm from "../components/AppForm";
-import AppFormFiled from "../components/AppFormFiled";
-import SubmitButton from "../components/SubmitButton";
+import { AppForm, AppFormFiled, SubmitButton } from "../components/forms";
 import Screen from "../components/Screen";
 
 const logoURL = require("../assets/logo-red.png");
