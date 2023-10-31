@@ -1,10 +1,13 @@
 import { Platform, StyleSheet } from "react-native";
+import colors from "./colors";
 
-const styles = StyleSheet.create({
+const defaultStyles = StyleSheet.create({
+  colors: colors,
   text: {
+    color: colors.dark,
     fontSize: 18,
     fontFamily: Platform.OS === "android" ? "Roboto" : "Avenir",
   },
 });
 
-export default styles;
+export default defaultStyles;
