@@ -1,10 +1,10 @@
 import { Image, StyleSheet } from "react-native";
-import { Formik } from "formik";
 import * as Yup from "yup";
 
-import Screen from "../components/Screen";
+import AppForm from "../components/AppForm";
 import AppFormFiled from "../components/AppFormFiled";
 import SubmitButton from "../components/SubmitButton";
+import Screen from "../components/Screen";
 
 const logoURL = require("../assets/logo-red.png");
 
@@ -17,35 +17,31 @@ const LoginScreen = () => {
   return (
     <Screen style={styles.container}>
       <Image source={logoURL} style={styles.logo} />
-      <Formik
+      <AppForm
         initialValues={{ email: "", password: "" }}
         onSubmit={(value) => console.log(value)}
         validationSchema={LoginSchema}
       >
-        {() => (
-          <>
-            <AppFormFiled
-              autoCapitalize="none"
-              autoCorrect={false}
-              icon="email"
-              name="email"
-              placeholder="Email"
-              keyboardType="email-address"
-              textContentType="emailAddress"
-            />
-            <AppFormFiled
-              autoCapitalize="none"
-              autoCorrect={false}
-              icon="lock"
-              name="password"
-              placeholder="Password"
-              secureTextEntry
-              textContentType="password"
-            />
-            <SubmitButton title="Login" />
-          </>
-        )}
-      </Formik>
+        <AppFormFiled
+          autoCapitalize="none"
+          autoCorrect={false}
+          icon="email"
+          name="email"
+          placeholder="Email"
+          keyboardType="email-address"
+          textContentType="emailAddress"
+        />
+        <AppFormFiled
+          autoCapitalize="none"
+          autoCorrect={false}
+          icon="lock"
+          name="password"
+          placeholder="Password"
+          secureTextEntry
+          textContentType="password"
+        />
+        <SubmitButton title="Login" />
+      </AppForm>
     </Screen>
   );
 };
