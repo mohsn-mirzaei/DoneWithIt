@@ -2,11 +2,9 @@ import { Image, StyleSheet } from "react-native";
 import { Formik } from "formik";
 import * as Yup from "yup";
 
-import AppButton from "../components/AppButton";
-import AppTextInput from "../components/AppTextInput";
-import ErrorMessage from "../components/ErrorMessage";
 import Screen from "../components/Screen";
 import AppFormFiled from "../components/AppFormFiled";
+import SubmitButton from "../components/SubmitButton";
 
 const logoURL = require("../assets/logo-red.png");
 
@@ -24,7 +22,7 @@ const LoginScreen = () => {
         onSubmit={(value) => console.log(value)}
         validationSchema={LoginSchema}
       >
-        {({ handleSubmit }) => (
+        {() => (
           <>
             <AppFormFiled
               autoCapitalize="none"
@@ -44,7 +42,7 @@ const LoginScreen = () => {
               secureTextEntry
               textContentType="password"
             />
-            <AppButton title="Login" onPress={handleSubmit} />
+            <SubmitButton title="Login" />
           </>
         )}
       </Formik>
