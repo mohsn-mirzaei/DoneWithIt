@@ -1,4 +1,4 @@
-import AppTextInput from "../AppTextInput";
+import AppTextInput from "../TextInput";
 import { ErrorMessage } from ".";
 import { useFormikContext } from "formik";
 

@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import AppText from "../AppText";
+import AppText from "../Text";
 import colors from "../../config/colors";
 
 const ErrorMessage = ({ error, visible }) => {

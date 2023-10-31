@@ -9,7 +9,7 @@ import {
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import defaultStyles from "../config/defaultStyles";
-import AppText from "./AppText";
+import AppText from "./Text";
 import { useState } from "react";
 import Screen from "./Screen";
 import PickerItem from "./PickerItem";
