@@ -7,8 +7,8 @@ import Screen from "../components/Screen";
 const logoURL = require("../assets/logo-red.png");
 
 const LoginSchema = Yup.object().shape({
-  email: Yup.string().email("Invalid email").required("Required"),
-  password: Yup.string().min(4).required("Required"),
+  email: Yup.string().required().email("Invalid email"),
+  password: Yup.string().required().min(4),
 });
 
 const LoginScreen = () => {
