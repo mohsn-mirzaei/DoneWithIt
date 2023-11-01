@@ -1,8 +1,9 @@
 import { FlatList, StyleSheet, View } from "react-native";
-import ListItem from "../components/ListItem";
+
+import ListItem from "../components/list/ListItem";
+import ListItemSeparator from "../components/list/ListItemSeparator";
 import Screen from "../components/Screen";
 import Icon from "../components/Icon";
-import ListItemSeparator from "../components/ListItemSeparator";
 import colors from "../config/colors";
 
 const image = require("../assets/mosh.jpg");
