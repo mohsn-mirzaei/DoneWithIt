@@ -3,6 +3,7 @@ import { FlatList, StyleSheet } from "react-native";
 import Screen from "../components/Screen";
 import Card from "../components/Card";
 import colors from "../config/colors";
+import routes from "../components/navigation/routes";
 
 const listing = [
   {
@@ -29,7 +30,7 @@ const ListingScreen = ({ navigation }) => {
             image={item.image}
             title={item.title}
             subTitle={`$${item.price}`}
-            onPress={() => navigation.navigate("ListingDetails", item)}
+            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}
       />

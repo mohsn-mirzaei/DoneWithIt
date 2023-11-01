@@ -5,6 +5,7 @@ import ListItemSeparator from "../components/list/ListItemSeparator";
 import Screen from "../components/Screen";
 import Icon from "../components/Icon";
 import colors from "../config/colors";
+import routes from "../components/navigation/routes";
 
 const image = require("../assets/mosh.jpg");
 
@@ -22,7 +23,7 @@ const menuItem = [
       name: "email",
       backgroundColor: colors.secondary,
     },
-    targetScreen: "Messeges",
+    targetScreen: routes.MESSAGES,
   },
 ];
 
