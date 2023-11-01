@@ -19,14 +19,14 @@ const FormImagePicker = ({ name }) => {
   };
 
   return (
-    <View>
+    <>
       <ImageInputList
         imageUris={imageUris}
         onRemoveImage={handleRemove}
         onAddImage={handleAdd}
       />
       <ErrorMessage error={errors[name]} visible={touched[name]} />
-    </View>
+    </>
   );
 };
 

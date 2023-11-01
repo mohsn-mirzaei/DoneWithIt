@@ -1,10 +1,10 @@
 import { GestureHandlerRootView } from "react-native-gesture-handler";
-import FormImagePicker from "./app/components/forms/FormImagePicker";
+import ListingEditScreen from "./app/screens/ListingEditScreen";
 
 export default App = () => {
   return (
     <GestureHandlerRootView>
-      <FormImagePicker />
+      <ListingEditScreen />
     </GestureHandlerRootView>
   );
 };
