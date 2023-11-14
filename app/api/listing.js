@@ -1,6 +1,6 @@
 import apiClient from "./client";
 
-const endpoint = "/listing";
+const endpoint = "/listings";
 
 const getListing = () => apiClient.get(endpoint);
 
