@@ -10,7 +10,7 @@ import {
 
 import Screen from "../components/Screen";
 import CategoryPickerItem from "../components/CategoryPickerItem";
-import listingApi from "../api/listing";
+import listingApi from "../api/listings";
 import useLocation from "../components/hooks/useLocation";
 
 const ListingEditSchema = Yup.object().shape({
@@ -82,10 +82,15 @@ const ListingEditScreen = () => {
   const location = useLocation();
 
   const handleSubmit = async (listing) => {
-    const result = await listingApi.addListig({ ...listing, location });
+    const result = await listingApi.addListing(
+      { ...listing, location },
+      (progress) => console.log(progress)
+    );
 
     if (!result.ok)
-      return alert("Couldn't save the listing"), console.log(result.problem);
+      return (
+        alert("Couldn't save the listing"), console.log(result.originalError)
+      );
     alert("Success");
   };
 

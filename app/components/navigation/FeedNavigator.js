@@ -8,7 +8,7 @@ import routes from "./routes";
 const Stack = createStackNavigator();
 
 const FeedNavigator = () => (
-  <Stack.Navigator mode="modal">
+  <Stack.Navigator presentation="modal">
     <Stack.Screen
       name={routes.LISTING}
       component={ListingScreen}

@@ -1,10 +1,10 @@
-import apiClient from "./client";
+import client from "./client";
 
 const endpoint = "/listings";
 
-const getListing = () => apiClient.get(endpoint);
+const getListings = () => client.get(endpoint);
 
-const addListig = (listing) => {
+export const addListing = (listing, onUploadProgress) => {
   const data = new FormData();
   data.append("title", listing.title);
   data.append("price", listing.price);
@@ -22,10 +22,13 @@ const addListig = (listing) => {
   if (listing.location)
     data.append("location", JSON.stringify(listing.location));
 
-  return apiClient.post(endpoint, data);
+  return client.post(endpoint, data, {
+    onUploadProgress: (progress) =>
+      onUploadProgress(progress.loaded / progress.total),
+  });
 };
 
 export default {
-  addListig,
-  getListing,
+  addListing,
+  getListings,
 };
