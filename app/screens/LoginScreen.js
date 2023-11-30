@@ -13,6 +13,7 @@ import Screen from "../components/Screen";
 import authApi from "../api/auth";
 import { useContext } from "react";
 import AuthContext from "../auth/context";
+import authStorage from "../auth/storage";
 
 const logoURL = require("../assets/logo-red.png");
 
@@ -33,6 +34,7 @@ const LoginScreen = () => {
     setLoginFaild(false);
     const user = jwtDecode(result.data);
     authContext.setUser(user);
+    authStorage.storeToken(result.data);
   };
 
   return (
