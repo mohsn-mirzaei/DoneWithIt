@@ -11,6 +11,8 @@ import {
 } from "../components/forms";
 import Screen from "../components/Screen";
 import authApi from "../api/auth";
+import { useContext } from "react";
+import AuthContext from "../auth/context";
 
 const logoURL = require("../assets/logo-red.png");
 
@@ -20,6 +22,8 @@ const LoginSchema = Yup.object().shape({
 });
 
 const LoginScreen = () => {
+  const authContext = useContext(AuthContext);
+
   const [loginFaild, setLoginFaild] = useState(false);
 
   const handleSubmit = async ({ email, password }) => {
@@ -28,7 +32,7 @@ const LoginScreen = () => {
     if (!result.ok) return setLoginFaild(true);
     setLoginFaild(false);
     const user = jwtDecode(result.data);
-    console.log(user);
+    authContext.setUser(user);
   };
 
   return (
