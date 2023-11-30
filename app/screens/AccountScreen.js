@@ -6,6 +6,8 @@ import Screen from "../components/Screen";
 import Icon from "../components/Icon";
 import colors from "../config/colors";
 import routes from "../components/navigation/routes";
+import { useContext } from "react";
+import AuthContext from "../auth/context";
 
 const image = require("../assets/mosh.jpg");
 
@@ -28,14 +30,12 @@ const menuItem = [
 ];
 
 const AccountScreen = ({ navigation }) => {
+  const { user } = useContext(AuthContext);
+
   return (
     <Screen style={styles.screen}>
       <View style={styles.container}>
-        <ListItem
-          title="Mosh Hamedani"
-          subTitle="codewithmosh@gmail.com"
-          image={image}
-        />
+        <ListItem title={user.name} subTitle={user.email} image={image} />
       </View>
       <View style={styles.container}>
         <FlatList
