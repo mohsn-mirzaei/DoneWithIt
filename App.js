@@ -11,7 +11,7 @@ export default App = () => {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <OfflineNotice />
       <NavigationContainer theme={navigationTheme}>
-        <AppNavigator />
+        <AuthNavigator />
       </NavigationContainer>
     </GestureHandlerRootView>
   );
