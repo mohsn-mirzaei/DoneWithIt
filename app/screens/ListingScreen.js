@@ -11,7 +11,7 @@ import colors from "../config/colors";
 import routes from "../components/navigation/routes";
 
 import listingApi from "../api/listings";
-import useApi from "../components/hooks/useApi";
+import useApi from "../hooks/useApi";
 
 const ListingScreen = ({ navigation }) => {
   const getListingsApi = useApi(listingApi.getListings);

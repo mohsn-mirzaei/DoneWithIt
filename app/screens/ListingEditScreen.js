@@ -11,7 +11,7 @@ import {
 import Screen from "../components/Screen";
 import CategoryPickerItem from "../components/CategoryPickerItem";
 import listingApi from "../api/listings";
-import useLocation from "../components/hooks/useLocation";
+import useLocation from "../hooks/useLocation";
 import { useState } from "react";
 import UploadScreen from "./UploadScreen";
 
