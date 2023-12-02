@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Image, StyleSheet } from "react-native";
 import * as Yup from "yup";
-import jwtDecode from "jwt-decode";
 
 import {
   AppForm,
@@ -11,9 +10,7 @@ import {
 } from "../components/forms";
 import Screen from "../components/Screen";
 import authApi from "../api/auth";
-import { useContext } from "react";
-import AuthContext from "../auth/context";
-import authStorage from "../auth/storage";
+import useAuth from "../auth/useAuth";
 
 const logoURL = require("../assets/logo-red.png");
 
@@ -23,7 +20,7 @@ const LoginSchema = Yup.object().shape({
 });
 
 const LoginScreen = () => {
-  const authContext = useContext(AuthContext);
+  const { logIn } = useAuth();
 
   const [loginFaild, setLoginFaild] = useState(false);
 
@@ -32,9 +29,7 @@ const LoginScreen = () => {
 
     if (!result.ok) return setLoginFaild(true);
     setLoginFaild(false);
-    const user = jwtDecode(result.data);
-    authContext.setUser(user);
-    authStorage.storeToken(result.data);
+    logIn(result.data);
   };
 
   return (

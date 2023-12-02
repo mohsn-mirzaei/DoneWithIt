@@ -6,9 +6,8 @@ import Screen from "../components/Screen";
 import Icon from "../components/Icon";
 import colors from "../config/colors";
 import routes from "../components/navigation/routes";
-import { useContext } from "react";
 import AuthContext from "../auth/context";
-import authStorage from "../auth/storage";
+import useAuth from "../auth/useAuth";
 
 const image = require("../assets/mosh.jpg");
 
@@ -31,12 +30,7 @@ const menuItem = [
 ];
 
 const AccountScreen = ({ navigation }) => {
-  const { user, setUser } = useContext(AuthContext);
-
-  const handleLogOut = () => {
-    setUser(null);
-    authStorage.removeToken();
-  };
+  const { user, logOut } = useAuth(AuthContext);
 
   return (
     <Screen style={styles.screen}>
@@ -65,7 +59,7 @@ const AccountScreen = ({ navigation }) => {
       <ListItem
         title="Log out"
         IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
-        onPress={handleLogOut}
+        onPress={() => logOut()}
       />
     </Screen>
   );
