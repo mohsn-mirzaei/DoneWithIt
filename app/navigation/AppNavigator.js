@@ -14,7 +14,9 @@ const AppNavigator = () => {
   useNotification();
 
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator
+      screenOptions={{ headerShown: false, tabBarHideOnKeyboard: true }}
+    >
       <Tab.Screen
         name={routes.FEED}
         component={FeedNavigator}
