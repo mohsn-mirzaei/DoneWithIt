@@ -35,5 +35,8 @@
     "updates": {
       "url": "https://u.expo.dev/674b70f7-d87c-4b34-b310-789ea0d93262"
     }
+  },
+  "notification": {
+    "iosDisplayInForeground": true
   }
 }
