@@ -5,7 +5,7 @@ import ListItemSeparator from "../components/list/ListItemSeparator";
 import Screen from "../components/Screen";
 import Icon from "../components/Icon";
 import colors from "../config/colors";
-import routes from "../components/navigation/routes";
+import routes from "../navigation/routes";
 import AuthContext from "../auth/context";
 import useAuth from "../auth/useAuth";
 

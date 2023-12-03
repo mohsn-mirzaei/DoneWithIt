@@ -1,7 +1,7 @@
 import { ImageBackground, StyleSheet, View, Image, Text } from "react-native";
 
 import AppButton from "../components/Button";
-import routes from "../components/navigation/routes";
+import routes from "../navigation/routes";
 
 const WelcomeScreen = ({ navigation }) => {
   const backgroundURL = require("../assets/background.jpg");

@@ -8,7 +8,7 @@ import Card from "../components/Card";
 import Screen from "../components/Screen";
 
 import colors from "../config/colors";
-import routes from "../components/navigation/routes";
+import routes from "../navigation/routes";
 
 import listingApi from "../api/listings";
 import useApi from "../hooks/useApi";

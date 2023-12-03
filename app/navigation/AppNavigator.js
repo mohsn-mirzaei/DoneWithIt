@@ -4,10 +4,11 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import * as Notifications from "expo-notifications";
 import Constants from "expo-constants";
 
+import expoPushTokensApi from "../api/expoPushTokens";
 import FeedNavigator from "./FeedNavigator";
-import ListingEditScreen from "../../screens/ListingEditScreen";
+import ListingEditScreen from "../screens/ListingEditScreen";
 import AccountNavigator from "./AccountNavigator";
-import NewListingButton from "../NewListingButton";
+import NewListingButton from "../components/NewListingButton";
 import routes from "./routes";
 
 const Tab = createBottomTabNavigator();
@@ -25,7 +26,7 @@ const AppNavigator = () => {
       const token = await Notifications.getExpoPushTokenAsync({
         projectId: Constants.expoConfig.extra.projectId,
       });
-      console.log(token);
+      expoPushTokensApi.register(token.data);
     } catch (error) {
       console.log("Error getting a push toekn.", error);
     }

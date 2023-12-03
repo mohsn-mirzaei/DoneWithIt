@@ -4,9 +4,9 @@ import { GestureHandlerRootView } from "react-native-gesture-handler";
 import * as SplashScreen from "expo-splash-screen";
 
 import AuthContext from "./app/auth/context";
-import AuthNavigator from "./app/components/navigation/AuthNavigator";
-import AppNavigator from "./app/components/navigation/AppNavigator";
-import navigationTheme from "./app/components/navigation/navigationTheme";
+import AuthNavigator from "./app/navigation/AuthNavigator";
+import AppNavigator from "./app/navigation/AppNavigator";
+import navigationTheme from "./app/navigation/navigationTheme";
 import OfflineNotice from "./app/components/OfflineNotice";
 import authStorage from "./app/auth/storage";
 
