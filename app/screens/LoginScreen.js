@@ -11,6 +11,8 @@ import {
 import Screen from "../components/Screen";
 import authApi from "../api/auth";
 import useAuth from "../auth/useAuth";
+import useApi from "../hooks/useApi";
+import ActivityIndicator from "../components/ActivityIndicator";
 
 const logoURL = require("../assets/logo-red.png");
 
@@ -20,12 +22,13 @@ const LoginSchema = Yup.object().shape({
 });
 
 const LoginScreen = () => {
+  const loginApi = useApi(authApi.login);
   const { logIn } = useAuth();
 
   const [loginFaild, setLoginFaild] = useState(false);
 
   const handleSubmit = async ({ email, password }) => {
-    const result = await authApi.login(email, password);
+    const result = await loginApi.request(email, password);
 
     if (!result.ok) return setLoginFaild(true);
     setLoginFaild(false);
@@ -33,38 +36,41 @@ const LoginScreen = () => {
   };
 
   return (
-    <Screen style={styles.container}>
-      <Image source={logoURL} style={styles.logo} />
-      <AppForm
-        initialValues={{ email: "", password: "" }}
-        onSubmit={handleSubmit}
-        validationSchema={LoginSchema}
-      >
-        <ErrorMessage
-          error="Invalid email and/or password."
-          visible={loginFaild}
-        />
-        <AppFormFiled
-          autoCapitalize="none"
-          autoCorrect={false}
-          icon="email"
-          name="email"
-          placeholder="Email"
-          keyboardType="email-address"
-          textContentType="emailAddress"
-        />
-        <AppFormFiled
-          autoCapitalize="none"
-          autoCorrect={false}
-          icon="lock"
-          name="password"
-          placeholder="Password"
-          secureTextEntry
-          textContentType="password"
-        />
-        <SubmitButton title="Login" />
-      </AppForm>
-    </Screen>
+    <>
+      <ActivityIndicator visible={loginApi.loading} />
+      <Screen style={styles.container}>
+        <Image source={logoURL} style={styles.logo} />
+        <AppForm
+          initialValues={{ email: "", password: "" }}
+          onSubmit={handleSubmit}
+          validationSchema={LoginSchema}
+        >
+          <ErrorMessage
+            error="Invalid email and/or password."
+            visible={loginFaild}
+          />
+          <AppFormFiled
+            autoCapitalize="none"
+            autoCorrect={false}
+            icon="email"
+            name="email"
+            placeholder="Email"
+            keyboardType="email-address"
+            textContentType="emailAddress"
+          />
+          <AppFormFiled
+            autoCapitalize="none"
+            autoCorrect={false}
+            icon="lock"
+            name="password"
+            placeholder="Password"
+            secureTextEntry
+            textContentType="password"
+          />
+          <SubmitButton title="Login" />
+        </AppForm>
+      </Screen>
+    </>
   );
 };
 

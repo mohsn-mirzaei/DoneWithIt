@@ -28,7 +28,6 @@ const RegisterScreen = () => {
   const [error, setError] = useState();
 
   const handleSubmit = async (userInfo) => {
-    console.log(userInfo);
     const result = await registerApi.request(userInfo);
 
     if (!result.ok) {
@@ -48,41 +47,43 @@ const RegisterScreen = () => {
   };
 
   return (
-    <Screen style={styles.container}>
+    <>
       <ActivityIndicator visible={registerApi.loading || loginApi.loading} />
-      <AppForm
-        initialValues={{ name: "", email: "", password: "" }}
-        onSubmit={handleSubmit}
-        validationSchema={LoginSchema}
-      >
-        <ErrorMessage error={error} visible={error} />
-        <AppFormFiled
-          autoCorrect={false}
-          icon="account"
-          name="name"
-          placeholder="Full Name"
-        />
-        <AppFormFiled
-          autoCapitalize="none"
-          autoCorrect={false}
-          icon="email"
-          name="email"
-          placeholder="Email"
-          keyboardType="email-address"
-          textContentType="emailAddress"
-        />
-        <AppFormFiled
-          autoCapitalize="none"
-          autoCorrect={false}
-          icon="lock"
-          name="password"
-          placeholder="Password"
-          secureTextEntry
-          textContentType="password"
-        />
-        <SubmitButton title="Register" />
-      </AppForm>
-    </Screen>
+      <Screen style={styles.container}>
+        <AppForm
+          initialValues={{ name: "", email: "", password: "" }}
+          onSubmit={handleSubmit}
+          validationSchema={LoginSchema}
+        >
+          <ErrorMessage error={error} visible={error} />
+          <AppFormFiled
+            autoCorrect={false}
+            icon="account"
+            name="name"
+            placeholder="Full Name"
+          />
+          <AppFormFiled
+            autoCapitalize="none"
+            autoCorrect={false}
+            icon="email"
+            name="email"
+            placeholder="Email"
+            keyboardType="email-address"
+            textContentType="emailAddress"
+          />
+          <AppFormFiled
+            autoCapitalize="none"
+            autoCorrect={false}
+            icon="lock"
+            name="password"
+            placeholder="Password"
+            secureTextEntry
+            textContentType="password"
+          />
+          <SubmitButton title="Register" />
+        </AppForm>
+      </Screen>
+    </>
   );
 };
 
