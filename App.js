@@ -10,8 +10,11 @@ import navigationTheme from "./app/navigation/navigationTheme";
 import OfflineNotice from "./app/components/OfflineNotice";
 import authStorage from "./app/auth/storage";
 import { navigationRef } from "./app/navigation/rootNavigation";
+import logger from "./app/utility/logger";
 
 SplashScreen.preventAutoHideAsync();
+
+logger.start();
 
 export default App = () => {
   const [user, setUser] = useState();

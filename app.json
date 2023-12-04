@@ -27,6 +27,9 @@
     "extra": {
       "eas": {
         "projectId": "674b70f7-d87c-4b34-b310-789ea0d93262"
+      },
+      "bugsnag": {
+        "apiKey": "311645f4c297bab6d84ce6092ec42caa"
       }
     },
     "runtimeVersion": {

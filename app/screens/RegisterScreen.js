@@ -14,6 +14,7 @@ import useAuth from "../auth/useAuth";
 import authApi from "../api/auth";
 import useApi from "../hooks/useApi";
 import ActivityIndicator from "../components/ActivityIndicator";
+import logger from "../utility/logger";
 
 const LoginSchema = Yup.object().shape({
   name: Yup.string().required().min(3),
@@ -34,7 +35,7 @@ const RegisterScreen = () => {
       if (result.data) setError(result.data.error);
       else {
         setError("An unexpected error occurred.");
-        console.log(result);
+        logger.log(result);
       }
       return;
     }

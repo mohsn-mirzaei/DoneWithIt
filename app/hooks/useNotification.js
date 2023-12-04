@@ -3,6 +3,7 @@ import * as Notifications from "expo-notifications";
 import Constants from "expo-constants";
 
 import expoPushTokensApi from "../api/expoPushTokens";
+import logger from "../utility/logger";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -30,7 +31,7 @@ export default useNotification = (notificationListener) => {
       });
       expoPushTokensApi.register(token.data);
     } catch (error) {
-      console.log("Error getting a push toekn.", error);
+      logger.log("Error getting a push toekn.", error);
     }
   };
 };
