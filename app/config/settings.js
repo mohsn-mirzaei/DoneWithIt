@@ -1,20 +1,20 @@
-import Constants from "expo-constants";
+import * as Updates from "expo-updates";
 
 const settings = {
   dev: {
     apiUrl: "http://192.168.150.22:9000/api",
   },
   staging: {
-    apiUrl: "http://192.168.150.22:9000/api",
+    apiUrl: "https://donewithit.mohsenmirzaei.ir/api",
   },
   prod: {
-    apiUrl: "http://192.168.150.22:9000/api",
+    apiUrl: "https://donewithit.mohsenmirzaei.ir/api",
   },
 };
 
 const getCurrentSettings = () => {
   if (__DEV__) return settings.dev;
-  if (Constants.manifest.releaseChannel === "staging") return settings.staging;
+  if (Updates.channel === "staging") return settings.staging;
   return settings.prod;
 };
 
