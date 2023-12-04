@@ -17,7 +17,7 @@ In this tutorial I learned:
 - Run and debug React Native apps effectively
 - Work with core components and APIs
 - Build complex layouts with Flexbox
-- Apply beautiful styles to your components
+- Apply beautiful styles to components
 - Build forms with Formik
 - Implement data validation with Yup
 - Publish React Native apps to Expo
