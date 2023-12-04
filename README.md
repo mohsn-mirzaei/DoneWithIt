@@ -1,6 +1,6 @@
 # Complete React Native educational project
 
-This software is made with React Native and using.
+This software is made with React Native and using Expo.
 
 I have written this software with newer versions of the packages installed during the training, and some of the codes are different from the codes written during the training. Because the codes were obsolete.
 
