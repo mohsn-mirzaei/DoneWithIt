@@ -4,7 +4,8 @@ import authStorage from "../auth/storage";
 import settings from "../config/settings";
 
 const apiClient = create({
-  baseURL: settings.apiUrl,
+  // baseURL: settings.apiUrl,
+  baseURL: "https://donewithit.mohsenmirzaei.ir/api",
 });
 
 apiClient.addAsyncRequestTransform(async (request) => {

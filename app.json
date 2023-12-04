@@ -3,8 +3,6 @@
     "name": "DoneWithIt",
     "slug": "DoneWithIt",
     "description": "",
-    "author": "Mosh Hamedani",
-    "learner": "Mohsen Mirzaei",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/icon.png",
@@ -16,13 +14,17 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "ir.mohsenmirzaei.donewithit",
+      "buildNumber": "1.0.0"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./app/assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "ir.mohsenmirzaei.donewithit",
+      "versionCode": 1
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
