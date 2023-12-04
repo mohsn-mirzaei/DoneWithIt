@@ -9,7 +9,7 @@ import routes from "../navigation/routes";
 import AuthContext from "../auth/context";
 import useAuth from "../auth/useAuth";
 
-const image = require("../assets/mosh.jpg");
+const image = require("../assets/MohsenMirzaei.jpg");
 
 const menuItem = [
   {
