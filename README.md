@@ -36,3 +36,15 @@ In this tutorial I learned:
 - Log and monitor errors
 - Manage configuration settings across different environments
 - Build and distribute apps
+
+You can see the details of the software on my portfolio site and download the software and test it:
+[mohsenmirzaei.ir](https://mohsenmirzaei.ir/)
+
+After downloading the app, you can login by entering the following information:
+
+- Email: mohsen@domain.com
+- Password: 12345
+
+Or register with your own information
+
+This software does not have a real database and information is not saved!
