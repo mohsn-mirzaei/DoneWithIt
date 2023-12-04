@@ -13,7 +13,7 @@ Instructor's Github:
 In this tutorial I learned:
 
 - Confidently build mobile apps using React Native
-- Properly structure your React Native projects
+- Properly structure React Native projects
 - Run and debug React Native apps effectively
 - Work with core components and APIs
 - Build complex layouts with Flexbox
