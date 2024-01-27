@@ -5,7 +5,7 @@ import settings from "../config/settings";
 
 const apiClient = create({
   // baseURL: settings.apiUrl,
-  baseURL: "https://donewithit.mohsenmirzaei.ir/api",
+  baseURL: "https://donewithit.mohsenmirzaei.dev/api",
 });
 
 apiClient.addAsyncRequestTransform(async (request) => {
