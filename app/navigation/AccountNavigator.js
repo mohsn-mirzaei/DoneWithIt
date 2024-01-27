@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 const AccountNavigator = () => (
   <Stack.Navigator>
     <Stack.Screen
-      name={routes.ACCOUNT}
+      name={routes.ACCOUNT_DETAILS}
       component={AccountScreen}
       options={{ headerShown: false }}
     />
