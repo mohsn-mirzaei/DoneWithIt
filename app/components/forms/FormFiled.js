@@ -1,6 +1,6 @@
-import AppTextInput from "../TextInput";
-import { ErrorMessage } from ".";
 import { useFormikContext } from "formik";
+import AppTextInput from "../TextInput";
+import ErrorMessage from "./ErrorMessage";
 
 const AppFormFiled = ({ name, width, ...otherProps }) => {
   const { setFieldTouched, setFieldValue, errors, touched, values } =
