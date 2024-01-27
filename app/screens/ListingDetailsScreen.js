@@ -1,20 +1,16 @@
-import { Platform, StyleSheet, View } from "react-native";
+import { ScrollView, StyleSheet, View } from "react-native";
 import { Image } from "react-native-expo-image-cache";
 
 import AppText from "../components/Text";
 import colors from "../config/colors";
 import ListItem from "../components//list/ListItem";
 import ContactSellerForm from "../components/ContactSellerForm";
-import { KeyboardAvoidingView } from "react-native";
 
 const ListingDetailsScreen = ({ route }) => {
   const listing = route.params;
 
   return (
-    <KeyboardAvoidingView
-      behavior="position"
-      keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 100}
-    >
+    <ScrollView>
       <Image
         style={styles.image}
         uri={listing.images[0].url}
@@ -33,7 +29,7 @@ const ListingDetailsScreen = ({ route }) => {
         </View>
         <ContactSellerForm listing={listing} />
       </View>
-    </KeyboardAvoidingView>
+    </ScrollView>
   );
 };
 
