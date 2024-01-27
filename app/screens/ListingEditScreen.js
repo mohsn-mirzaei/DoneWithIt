@@ -86,19 +86,47 @@ const ListingEditScreen = () => {
   const [progress, setProgress] = useState(0);
 
   const handleSubmit = async (listing, { resetForm }) => {
-    setProgress(0);
-    setUploadVisible(true);
-    const result = await listingApi.addListing(
-      { ...listing, location },
-      (progress) => setProgress(progress)
+    const data = new FormData();
+    data.append("title", listing.title);
+    data.append("price", listing.price);
+    data.append("categoryId", listing.category.value);
+    data.append("description", listing.description);
+
+    listing.images.forEach((image, index) =>
+      data.append("images", {
+        name: "image" + index,
+        type: "image/jpeg",
+        uri: image,
+      })
     );
 
-    if (!result.ok) {
-      setUploadVisible(false);
-      return alert("Couldn't save the listing");
-    }
+    if (location) data.append("location", JSON.stringify(location));
 
-    resetForm();
+    setUploadVisible(true);
+    setProgress(0.2);
+    setProgress(0.4);
+    try {
+      const response = await fetch(
+        "https://donewithit.mohsenmirzaei.dev/api/listings",
+        {
+          method: "POST",
+          body: data,
+        }
+      );
+
+      if (response.ok) setProgress(100);
+
+      if (!response.ok) {
+        setUploadVisible(false);
+        return alert("Couldn't save the listing");
+      }
+      resetForm();
+      setUploadVisible(false);
+    } catch (error) {
+      console.error("Error during the listing upload:", error);
+      setUploadVisible(false);
+      alert("An error occurred during the listing upload");
+    }
   };
 
   return (
