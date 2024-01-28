@@ -1,50 +1,39 @@
-# Complete React Native educational project
+# React Native Educational Project
 
-This software is made with React Native and using Expo.
+This React Native application, developed using Expo, showcases the integration of cutting-edge packages. During its creation, I employed the latest versions of packages, deviating from the initial training codes due to their obsolescence.
 
-I have written this software with newer versions of the packages installed during the training, and some of the codes are different from the codes written during the training. Because the codes were obsolete.
+The project was inspired by the comprehensive tutorial provided in [The Ultimate React Native Series](https://codewithmosh.com/p/the-ultimate-react-native-course), instructed by [Mosh Hamedani](https://github.com/mosh-hamedani). Throughout the tutorial, I gained proficiency in various aspects of React Native development:
 
-I have used this tutorial:
-[The Ultimate React Native Series](https://codewithmosh.com/p/the-ultimate-react-native-course)
+- Building mobile apps with confidence
+- Properly structuring React Native projects
+- Efficiently running and debugging React Native apps
+- Utilizing core components and APIs
+- Constructing complex layouts with Flexbox
+- Applying aesthetically pleasing styles to components
+- Creating forms with Formik
+- Implementing data validation with Yup
+- Publishing React Native apps to Expo
+- Applying industry best practices
+- Writing clean and efficient code
+- Using shortcuts for faster coding
+- Accessing native device features
+- Implementing navigation with React Navigation
+- Adding visually appealing tabs
+- Communicating with REST APIs
+- Uploading images and monitoring progress with progress bars
+- Building offline-capable apps
+- Caching data and images
+- Implementing authentication and authorization
+- Sending and receiving push notifications
+- Logging and monitoring errors
+- Managing configuration settings across different environments
+- Building and distributing apps
 
-Instructor's Github:
-[Mosh Hamedani](https://github.com/mosh-hamedani)
+For detailed information about the application, please visit my portfolio site [mohsenmirzaei.dev](https://mohsenmirzaei.dev/). You can also explore the application by scanning the provided QR code.
 
-In this tutorial I learned:
-
-- Confidently build mobile apps using React Native
-- Properly structure React Native projects
-- Run and debug React Native apps effectively
-- Work with core components and APIs
-- Build complex layouts with Flexbox
-- Apply beautiful styles to components
-- Build forms with Formik
-- Implement data validation with Yup
-- Publish React Native apps to Expo
-- Apply industry best practices
-- Write clean code like a pro
-- Use shortcuts to write code fast
-- Access native device features
-- Implement navigation using React Navigation
-- Add beautiful tabs
-- Communicate with REST APIs
-- Upload images and show progress bars
-- Build offline capable apps
-- Cache data and images
-- Implement authentication and authorization
-- Send and receive push notifications
-- Log and monitor errors
-- Manage configuration settings across different environments
-- Build and distribute apps
-
-You can see the details of the software on my portfolio site and download the software and test it:
-[mohsenmirzaei.ir](https://mohsenmirzaei.ir/)
-
-After downloading the app, you can login by entering the following information:
+Feel free to log in using the following credentials:
 
 - Email: mohsen@domain.com
 - Password: 12345
 
-Or register with your own information
-
-This software does not have a real database and information is not saved!
+Alternatively, you can register with your own information. Please note that this application doesn't utilize a real database, and the information is not saved.
