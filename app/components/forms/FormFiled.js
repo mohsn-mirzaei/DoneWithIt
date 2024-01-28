@@ -10,9 +10,9 @@ const AppFormFiled = ({ name, width, ...otherProps }) => {
       <AppTextInput
         onBlur={() => setFieldTouched(name)}
         onChangeText={(text) => setFieldValue(name, text)}
-        values={values[name]}
-        {...otherProps}
+        value={values[name]}
         width={width}
+        {...otherProps}
       />
       <ErrorMessage error={errors[name]} visible={touched[name]} />
     </>
