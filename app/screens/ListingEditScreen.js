@@ -102,31 +102,30 @@ const ListingEditScreen = () => {
 
     if (location) data.append("location", JSON.stringify(location));
 
-    setUploadVisible(true);
-    setProgress(0.2);
-    setProgress(0.4);
-    try {
-      const response = await fetch(
-        "https://donewithit.mohsenmirzaei.dev/api/listings",
-        {
-          method: "POST",
-          body: data,
-        }
-      );
-
-      if (response.ok) setProgress(100);
-
-      if (!response.ok) {
-        setUploadVisible(false);
+    const xhr = new XMLHttpRequest();
+    xhr.upload.addEventListener("progress", (event) => {
+      if (event.lengthComputable) {
+        const percentage = event.loaded / event.total;
+        setUploadVisible(true);
+        setProgress(percentage);
+      }
+    });
+    xhr.open("POST", "https://donewithit.mohsenmirzaei.dev/api/listings");
+    xhr.onload = async () => {
+      if (xhr.status === 201) {
+        resetForm();
+      } else {
         return alert("Couldn't save the listing");
       }
-      resetForm();
       setUploadVisible(false);
-    } catch (error) {
+    };
+
+    xhr.onerror = () => {
       console.error("Error during the listing upload:", error);
-      setUploadVisible(false);
       alert("An error occurred during the listing upload");
-    }
+    };
+
+    xhr.send(data);
   };
 
   return (
